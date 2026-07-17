@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics 4 — must be first script in head -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-04LR4LL9JZ');
+  </script>
   <title>Journal — Abrexom™ | Silk Road Stories</title>
   <meta name="description" content="Stories from the Silk Road — the history of saffron, how to use it, and the people who grow it in Herat Valley, Afghanistan." />
   <link rel="canonical" href="https://www.abrexom.com/pages/blog.html" />
@@ -11,9 +19,7 @@
   <meta property="og:image" content="https://www.abrexom.com/assets/images/og-image.jpg" />
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="stylesheet" href="/css/global.css" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-04LR4LL9JZ');</script>
+
   <style>
     .blog-card { background: var(--white); border: 0.5px solid rgba(184,162,106,0.15); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s var(--ease); }
     .blog-card:hover { border-color: rgba(184,162,106,0.45); transform: translateY(-4px); }
@@ -250,12 +256,12 @@
         <ul class="footer__col-links">
           <li><a href="https://instagram.com/shopabrexom" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="https://tiktok.com/@shopabrexom" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-          <li><a href="mailto:hello@shopabrexom.com">hello@shopabrexom.com</a></li>
+          <li><a href="mailto:hello@abrexom.com">hello@abrexom.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__legal">&copy; 2025 Abrexom™. All rights reserved. USPTO Registered Trademark.</p>
+      <p class="footer__legal">&copy; <span id="footerYear"></span> Abrexom™. All rights reserved. USPTO Registered Trademark.</p>
       <div class="footer__social">
         <a href="https://instagram.com/shopabrexom" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://tiktok.com/@shopabrexom" target="_blank" rel="noopener noreferrer">TikTok</a>

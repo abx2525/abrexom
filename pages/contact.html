@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics 4 — must be first script in head -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-04LR4LL9JZ');
+  </script>
   <title>Contact — Abrexom™</title>
   <meta name="description" content="Get in touch with Abrexom. Questions about our saffron, wholesale enquiries, or just want to say hello — we'd love to hear from you." />
   <link rel="canonical" href="https://www.abrexom.com/pages/contact.html" />
@@ -11,9 +19,7 @@
   <meta property="og:image" content="https://www.abrexom.com/assets/images/og-image.jpg" />
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="stylesheet" href="/css/global.css" />
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-04LR4LL9JZ');</script>
+
 </head>
 <body>
 
@@ -79,7 +85,7 @@
             <div style="width:40px;height:40px;border:0.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--ff-display);color:var(--gold);">@</div>
             <div>
               <p class="t-caption" style="margin-bottom:0.35rem;">Email</p>
-              <a href="mailto:hello@shopabrexom.com" class="t-body" style="color:var(--ink);">hello@shopabrexom.com</a>
+              <a href="mailto:hello@abrexom.com" class="t-body" style="color:var(--ink);">hello@abrexom.com</a>
             </div>
           </div>
           <div style="display:flex;gap:1.5rem;align-items:flex-start;">
@@ -170,7 +176,7 @@
           Is your saffron really from Afghanistan?
           <span style="font-size:1.5rem;color:var(--gold);line-height:1;">+</span>
         </summary>
-        <p class="t-body" style="margin-top:1rem;padding-right:2rem;">Yes. Every batch of Abrexom saffron is sourced directly from farming families in the Herat Valley, western Afghanistan. Each jar carries a batch number that traces it to a specific harvest. We do not blend saffron from multiple origins.</p>
+        <p class="t-body" style="margin-top:1rem;padding-right:2rem;">Yes. Every jar of Abrexom saffron is sourced directly from farming families in the Herat Valley, western Afghanistan. Afghanistan's saffron sector is not industrialised — it is handled entirely by local farmers. We do not blend saffron from multiple origins or add any fillers.</p>
       </details>
 
       <details style="border-top:0.5px solid rgba(8,5,14,0.1);padding:1.75rem 0;" class="reveal reveal-delay-1">
@@ -230,12 +236,12 @@
         <ul class="footer__col-links">
           <li><a href="https://instagram.com/shopabrexom" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="https://tiktok.com/@shopabrexom" target="_blank" rel="noopener noreferrer">TikTok</a></li>
-          <li><a href="mailto:hello@shopabrexom.com">hello@shopabrexom.com</a></li>
+          <li><a href="mailto:hello@abrexom.com">hello@abrexom.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__legal">&copy; 2025 Abrexom™. All rights reserved. USPTO Registered Trademark.</p>
+      <p class="footer__legal">&copy; <span id="footerYear"></span> Abrexom™. All rights reserved. USPTO Registered Trademark.</p>
       <div class="footer__social">
         <a href="https://instagram.com/shopabrexom" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://tiktok.com/@shopabrexom" target="_blank" rel="noopener noreferrer">TikTok</a>
