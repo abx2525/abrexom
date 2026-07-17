@@ -473,22 +473,159 @@ body::before {
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  html { font-size: 17px; }
 }
+
 @media (max-width: 768px) {
-  .nav { padding: 1.25rem 1.5rem; }
-  .nav.scrolled { padding: 1rem 1.5rem; }
+  html { font-size: 16px; }
+  .nav { padding: 1.1rem 1.25rem; }
+  .nav.scrolled { padding: 0.9rem 1.25rem; }
   .nav__links, .nav__shop { display: none; }
   .nav__toggle { display: flex; }
-  .section { padding: 5rem 0; }
-  .section--lg { padding: 6rem 0; }
-  .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
-  .grid-3 { grid-template-columns: 1fr; gap: 2rem; }
-  .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
-  .footer__bottom { flex-direction: column; text-align: center; }
+
+  .section { padding: 4rem 0; }
+  .section--sm { padding: 3rem 0; }
+  .section--lg { padding: 5rem 0; }
+
+  /* Stack all grids on mobile */
+  .grid-2 { grid-template-columns: 1fr; gap: 2.5rem; }
+  .grid-3 { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  /* Values strip — stack vertically */
+  .strip-dark .grid-values {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Footer */
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer__bottom { flex-direction: column; text-align: center; gap: 0.75rem; }
+  .footer { padding: 3.5rem 0 2rem; }
+
+  /* Page headers on mobile */
+  .page-header { padding: 10rem 0 4rem; }
+
+  /* Buttons full-width on mobile */
+  .btn { padding: 0.9rem 1.5rem; font-size: 0.7rem; }
+
+  /* Shop channels stack */
+  .shop-channels { flex-direction: column; }
+  .shop-channel { justify-content: center; }
+
+  /* About page values grid */
+  .about-values-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-values-grid > div {
+    border-right: none !important;
+    border-bottom: 0.5px solid rgba(184,162,106,0.18) !important;
+  }
+  .about-values-grid > div:last-child {
+    border-bottom: none !important;
+  }
 }
+
 @media (max-width: 480px) {
-  .container { padding: 0 1.25rem; }
+  html { font-size: 15px; }
+  .container { padding: 0 1rem; }
+
+  /* Hero tighter on small phones */
+  .hero { padding: 7rem 1rem 4rem !important; }
+
+  /* Tighter section spacing */
+  .section { padding: 3rem 0; }
+  .section--sm { padding: 2.5rem 0; }
+
+  /* Footer single column on small phones */
+  .footer__grid { grid-template-columns: 1fr; gap: 1.75rem; }
+
+  /* Notify / email form stacks */
+  .notify-form { flex-direction: column; }
+  .notify-form button { width: 100%; justify-content: center; }
+
+  /* Strip dark text size */
+  .strip-dark blockquote { font-size: clamp(1.3rem, 5vw, 2rem) !important; }
+
+  /* Blog cards full width */
+  .blog-card { min-width: 0; }
+
+  /* Card padding tighter */
+  .card { padding: 1.75rem; }
+}
+
+/* ── About page values 2×2 grid ───────────────────────────── */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 0.5px solid rgba(184,162,106,0.18);
+}
+@media (max-width: 600px) {
+  .about-values-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-values-grid > div {
+    border-right: none !important;
+    border-bottom: 0.5px solid rgba(184,162,106,0.18) !important;
+  }
+  .about-values-grid > div:last-child {
+    border-bottom: none !important;
+  }
+}
+
+/* ── Mobile overrides for inline grid styles ───────────────── */
+@media (max-width: 768px) {
+  /* Values strip on homepage */
+  .strip-dark .grid-values {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Footer journal teaser flex header */
+  .section [style*="display:flex"][style*="justify-content:space-between"] {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Product grid stacks */
+  .product .grid-2,
+  section .grid-2 { gap: 2rem; }
+
+  /* Page header padding */
+  .page-header { padding: 9rem 0 3.5rem; }
+}
+
+@media (max-width: 480px) {
+  /* Hero text alignment and padding */
+  .hero { min-height: 100svh; padding: 6rem 1.25rem 3.5rem !important; }
+
+  /* Nav logo smaller on tiny screens */
+  .nav__logo { font-size: 1rem; }
+
+  /* Buttons stack */
+  .hero > div > div[style*="display:flex"] {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Strip dark quote */
+  .strip-dark blockquote {
+    font-size: clamp(1.2rem, 4.5vw, 1.8rem) !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Blog card image shorter on phones */
+  .blog-card__img { aspect-ratio: 16/8; }
+
+  /* Contact grid stacks */
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  /* Form grid stacks */
+  form .grid-2 { grid-template-columns: 1fr !important; gap: 1rem !important; }
+
+  /* About origin grid stacks */
+  .about-origin .grid-2 { grid-template-columns: 1fr !important; }
 }
 
 /* Reduced motion */
