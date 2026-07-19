@@ -2,8 +2,9 @@
 
 /* Dynamic footer year */
 function initYear() {
-  document.querySelectorAll('.footer-year').forEach(el => {
-    el.textContent = new Date().getFullYear();
+  var year = new Date().getFullYear();
+  document.querySelectorAll('.footer-year').forEach(function(el) {
+    el.textContent = year;
   });
 }
 
