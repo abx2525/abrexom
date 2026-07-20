@@ -79,6 +79,7 @@ body::before {
 .container--narrow { max-width:740px; }
 .section { padding:6rem 0; }
 .section--sm { padding:4rem 0; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
 
 /* ── Utilities ──────────────────────────────────────────────── */
@@ -538,6 +539,7 @@ body::before {
   .section--sm { padding:3rem 0; }
 
   /* Grids → single column */
+  .grid-2 { grid-template-columns:1fr; gap:2.5rem; }
   .product-grid { grid-template-columns:1fr; gap:0; }
   .grid-3 { grid-template-columns:1fr; gap:1.75rem; }
 
@@ -566,9 +568,12 @@ body::before {
   /* Journal */
   .journal-header { flex-direction:column; align-items:flex-start; }
 
-  /* About grid */
-  .about-values-grid { grid-template-columns:1fr; }
-  .about-values-grid > div { border-right:none !important; padding:2.25rem 1.5rem; }
+  /* About origin section grid */
+  .about-origin-grid { grid-template-columns:1fr !important; gap:3rem !important; }
+
+  /* About page values grid */
+  .about-values-grid { grid-template-columns:1fr !important; }
+  .about-values-grid > div { border-right:none !important; }
   .about-values-grid > div:nth-last-child(-n+2) { border-bottom:0.5px solid rgba(184,162,106,0.18); }
   .about-values-grid > div:last-child { border-bottom:none; }
 
