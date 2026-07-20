@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 — must be first script in head -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,18 +24,15 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Abrexom","url":"https://www.abrexom.com","description":"Abrexom revives treasures once carried along the ancient Silk Road. Premium Afghan saffron, hand-harvested from the Herat Valley.","sameAs":["https://www.instagram.com/shopabrexom","https://www.tiktok.com/@shopabrexom","https://www.amazon.com/abrexom","https://www.etsy.com/shop/abrexom"]}
   </script>
-  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
-  <link rel="manifest" href="/assets/images/site.webmanifest">
-  <link rel="stylesheet" href="/css/global.css?v=7" />
+  <link rel="icon" href="/assets/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/css/global.css?v=8" />
 </head>
 <body>
 
 <!-- ══ NAV ══════════════════════════════════════════════════ -->
 <nav class="nav" id="nav">
-  <a href="/index.html" class="nav__logo">Abrexom<sup style="font-size:0.45em;vertical-align:super;letter-spacing:0;font-weight:300;">™</sup></a>
+  <a href="/index.html" class="nav__logo">Abrexom<sup>™</sup></a>
   <ul class="nav__links">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/pages/about.html">About</a></li>
@@ -60,8 +57,8 @@
 <!-- ══ HERO ═════════════════════════════════════════════════ -->
 <section class="hero" style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden;">
 
-  <!-- Compass rose watermark -->
-  <svg class="compass-wm" style="left:50%;top:50%;transform:translate(-50%,-50%)" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Compass rose watermark (decorative SVG — kept as bg element) -->
+  <svg class="compass-wm" style="left:50%;top:50%;transform:translate(-50%,-50%);" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="200" cy="200" r="190" stroke="#B8A26A" stroke-width="0.8"/>
     <circle cx="200" cy="200" r="150" stroke="#B8A26A" stroke-width="0.5"/>
     <circle cx="200" cy="200" r="100" stroke="#B8A26A" stroke-width="0.5"/>
@@ -73,10 +70,6 @@
     <polygon points="200,390 207,210 200,200 193,210" fill="#B8A26A"/>
     <polygon points="10,200 190,193 200,200 190,207" fill="#B8A26A"/>
     <polygon points="390,200 210,193 200,200 210,207" fill="#B8A26A"/>
-    <polygon points="200,60 204,196 200,200 196,196" fill="#B8A26A" opacity="0.6"/>
-    <polygon points="200,340 204,204 200,200 196,204" fill="#B8A26A" opacity="0.6"/>
-    <polygon points="60,200 196,196 200,200 196,204" fill="#B8A26A" opacity="0.6"/>
-    <polygon points="340,200 204,196 200,200 204,204" fill="#B8A26A" opacity="0.6"/>
   </svg>
 
   <div style="position:relative;z-index:1;max-width:900px;margin:0 auto;">
@@ -86,14 +79,14 @@
     <h1 class="t-display" style="margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.9s 0.3s forwards;">
       ABRE<em>X</em>OM
     </h1>
-    <p style="font-family:var(--ff-display);font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;font-weight:300;color:var(--ink-soft);margin-bottom:3.5rem;opacity:0;animation:fadeUp 0.9s 0.5s forwards;">
+    <p style="font-family:var(--ff-serif);font-size:clamp(1rem,2.5vw,1.4rem);font-style:italic;font-weight:300;color:var(--ink-soft);margin-bottom:3.5rem;opacity:0;animation:fadeUp 0.9s 0.5s forwards;">
       Treasures of the Silk Road, reborn.
     </p>
     <div class="divider" style="opacity:0;animation:fadeIn 1s 0.7s forwards;"></div>
     <p class="t-caption" style="margin-top:2.5rem;opacity:0;animation:fadeUp 0.9s 0.9s forwards;">
       Premium Afghan Saffron &nbsp;·&nbsp; Hand-harvested &nbsp;·&nbsp; Ethically sourced
     </p>
-    <div style="margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.9s 1.1s forwards;">
+    <div class="hero-btns" style="margin-top:3rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 0.9s 1.1s forwards;">
       <a href="#shop" class="btn btn--gold">Shop Saffron</a>
       <a href="/pages/about.html" class="btn btn--outline">Our Story</a>
     </div>
@@ -102,16 +95,16 @@
 
 <!-- ══ PROVENANCE STRIP ══════════════════════════════════════ -->
 <div class="strip-dark" id="provenance">
+  <!-- Decorative Silk Road path SVG -->
   <svg class="silk-road-bg" viewBox="0 0 1200 200" fill="none" aria-hidden="true">
     <path d="M0,80 Q150,50 300,85 Q450,120 600,70 Q750,20 900,80 Q1050,120 1200,75" stroke="#B8A26A" stroke-width="1.5" fill="none"/>
     <path d="M0,110 Q200,90 400,115 Q600,140 800,100 Q1000,60 1200,105" stroke="#B8A26A" stroke-width="0.8" fill="none"/>
     <circle cx="820" cy="82" r="5" fill="#B8A26A"/>
     <circle cx="820" cy="82" r="12" stroke="#B8A26A" stroke-width="0.8" fill="none"/>
-    <text x="834" y="70" font-family="serif" font-size="11" fill="#B8A26A">Herat Valley</text>
   </svg>
   <div class="container" style="position:relative;z-index:1;text-align:center;">
     <span class="t-eyebrow reveal" style="color:var(--gold-light);">Provenance</span>
-    <blockquote style="font-family:var(--ff-display);font-size:clamp(1.6rem,4vw,3rem);font-weight:300;font-style:italic;line-height:1.3;max-width:680px;margin:1.5rem auto;color:var(--stone);" class="reveal reveal-delay-1">
+    <blockquote class="reveal reveal-delay-1" style="font-family:var(--ff-serif);font-size:clamp(1.4rem,3.5vw,2.8rem);font-weight:300;font-style:italic;line-height:1.35;max-width:680px;margin:1.5rem auto;color:var(--stone);">
       "At the crossroads of East &amp; West, we revive treasures once carried along the ancient Silk Road."
     </blockquote>
     <p class="t-caption reveal reveal-delay-2" style="color:var(--gold-light);margin-top:1.5rem;">
@@ -123,77 +116,67 @@
 <!-- ══ PRODUCT ═══════════════════════════════════════════════ -->
 <section class="section" id="shop">
   <div class="container">
-    <div class="grid-2" style="gap:5rem;">
+    <div class="product-grid">
 
-      <!-- Visual -->
-      <div style="position:relative;" class="reveal">
-      <!--  <div style="background:var(--ink);aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 35% 45%,rgba(139,26,26,0.45) 0%,transparent 60%),radial-gradient(ellipse at 65% 55%,rgba(184,162,106,0.25) 0%,transparent 55%);"></div>
-          <!-- Compass emblem -->
-        <div style="background:var(--ink);aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-          <img
-            src="/assets/images/hero-jar.jpg"
-            alt="Abrexom Afghan Saffron — hand-harvested from the Herat Valley"
-            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;"
-          />
-        <!-- <div style="position:relative;z-index:1;text-align:center;">
-            <div style="width:130px;height:130px;border:1px solid rgba(184,162,106,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;position:relative;">
-              <div style="position:absolute;inset:9px;border:0.5px solid rgba(184,162,106,0.2);border-radius:50%;"></div>
-              <span style="font-family:var(--ff-display);font-size:4rem;font-weight:300;color:var(--gold);line-height:1;letter-spacing:-0.05em;">X</span>
-            </div>
-            <p style="font-family:var(--ff-display);font-size:0.8rem;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:var(--stone);opacity:0.6;">Abrexom</p>
-          </div> -->
-        </div> 
-            
+      <!-- Product image — replace SVG placeholder with real photo -->
+      <div class="product-visual reveal">
+        <!--
+          IMAGE PLACEHOLDER
+          Add hero-jar.jpg to: assets/images/hero-jar.jpg
+          Recommended size: 900 x 900px (square), JPG
+          This block will show the image once the file is added.
+        -->
+        <img
+          src="/assets/images/hero-jar.jpg"
+          alt="Abrexom Afghan Saffron — 2g glass jar, hand-harvested from the Herat Valley"
+          class="product-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <!-- Fallback shown only if image file is missing -->
+        <div class="product-img-fallback">
+          <svg width="80" height="80" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+            <circle cx="200" cy="200" r="180" stroke="#B8A26A" stroke-width="1" opacity="0.4"/>
+            <circle cx="200" cy="200" r="120" stroke="#B8A26A" stroke-width="0.6" opacity="0.3"/>
+            <line x1="200" y1="20" x2="200" y2="380" stroke="#B8A26A" stroke-width="0.6" opacity="0.3"/>
+            <line x1="20" y1="200" x2="380" y2="200" stroke="#B8A26A" stroke-width="0.6" opacity="0.3"/>
+            <text x="200" y="215" font-family="Georgia, serif" font-size="80" font-weight="300" fill="#B8A26A" text-anchor="middle" opacity="0.6">X</text>
+          </svg>
+          <p style="font-family:var(--ff-serif);font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--stone);opacity:0.5;margin-top:1.5rem;">Abrexom</p>
+        </div>
         <!-- Origin tag -->
-        <div style="position:absolute;bottom:-1rem;right:-1rem;background:var(--stone-d);border:0.5px solid rgba(184,162,106,0.3);padding:1rem 1.5rem;">
+        <div class="product-tag">
           <p class="t-caption" style="color:var(--gold);margin-bottom:0.3rem;">Origin</p>
-          <p style="font-family:var(--ff-display);font-size:1.1rem;font-weight:400;">Afghan Saffron</p>
+          <p style="font-family:var(--ff-serif);font-size:1rem;font-weight:400;color:var(--ink);">Afghan Saffron</p>
           <p class="t-small" style="margin-top:0.2rem;">Herat Valley · 2 g</p>
         </div>
       </div>
 
-      <!-- Info -->
+      <!-- Product info -->
       <div class="reveal reveal-delay-2">
         <span class="t-eyebrow">Now Available</span>
         <h2 class="t-h1" style="margin:1.25rem 0 0.5rem;">Afghan<br><em>Saffron</em></h2>
         <p class="t-caption" style="color:var(--gold);margin-bottom:2rem;">Herat Valley, Afghanistan · 2 g</p>
         <p class="t-body" style="margin-bottom:2rem;">Pure saffron threads, hand-picked at dawn during the brief autumn harvest by local farming families in Herat Valley. No stems, no fillers — just the vivid crimson stigmas of <em>Crocus sativus</em>, dried to preserve their full potency, colour, and aroma.</p>
 
-        <!-- Attributes -->
-        <ul style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.5rem;">
-          <li style="display:flex;align-items:center;gap:1rem;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);">
-            <span style="display:block;width:24px;height:0.5px;background:var(--gold);flex-shrink:0;"></span>Hand-harvested by local farmers
-          </li>
-          <li style="display:flex;align-items:center;gap:1rem;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);">
-            <span style="display:block;width:24px;height:0.5px;background:var(--gold);flex-shrink:0;"></span>100% from Herat Valley
-          </li>
-          <li style="display:flex;align-items:center;gap:1rem;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);">
-            <span style="display:block;width:24px;height:0.5px;background:var(--gold);flex-shrink:0;"></span>Airtight glass jar, gold lid
-          </li>
-          <li style="display:flex;align-items:center;gap:1rem;font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);">
-            <span style="display:block;width:24px;height:0.5px;background:var(--gold);flex-shrink:0;"></span>Non-industrialised, small-batch
-          </li>
+        <ul class="product-attrs">
+          <li>Hand-harvested by local farmers</li>
+          <li>100% from Herat Valley</li>
+          <li>Airtight glass jar, gold lid</li>
+          <li>Non-industrialised, small-batch</li>
         </ul>
 
-        <!-- Shop channels -->
-        <p style="font-size:0.72rem;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1.25rem;">Available on</p>
-        <div style="display:flex;flex-direction:column;gap:0.65rem;max-width:320px;">
-          <a href="https://www.amazon.com/s?k=abrexom+saffron" target="_blank" rel="noopener noreferrer"
-             style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:0.5px solid rgba(8,5,14,0.2);color:var(--ink-mid);font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,background 0.2s;"
-             onmouseover="this.style.borderColor='#B8A26A';this.style.background='rgba(184,162,106,0.04)'"
-             onmouseout="this.style.borderColor='rgba(8,5,14,0.2)';this.style.background='transparent'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8A26A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
-            <span style="flex:1;">Amazon</span>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B8A26A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        <!-- Shop buttons -->
+        <p class="t-caption" style="margin-bottom:1.25rem;">Available on</p>
+        <div class="shop-btns">
+          <a href="https://www.amazon.com/s?k=abrexom+saffron" target="_blank" rel="noopener noreferrer" class="shop-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
+            <span>Amazon</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
-          <a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer"
-             style="display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border:0.5px solid rgba(8,5,14,0.2);color:var(--ink-mid);font-size:0.7rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;transition:border-color 0.2s,background 0.2s;"
-             onmouseover="this.style.borderColor='#B8A26A';this.style.background='rgba(184,162,106,0.04)'"
-             onmouseout="this.style.borderColor='rgba(8,5,14,0.2)';this.style.background='transparent'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8A26A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-            <span style="flex:1;">Etsy</span>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B8A26A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer" class="shop-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            <span>Etsy</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
           </a>
         </div>
       </div>
@@ -202,8 +185,8 @@
 </section>
 
 <!-- ══ VALUES ════════════════════════════════════════════════ -->
-<section style="background:var(--ink);color:var(--stone);">
-  <div style="max-width:1160px;margin:0 auto;padding:0 2rem;">
+<section class="values-section">
+  <div class="container">
     <div class="values-boxes">
       <div class="value-box reveal">
         <span class="value-box__num">I</span>
@@ -242,9 +225,9 @@
 </section>
 
 <!-- ══ JOURNAL TEASER ════════════════════════════════════════ -->
-<section class="section" style="background:var(--stone-d);padding:5rem 0;">
+<section class="section" style="background:var(--stone-d);">
   <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+    <div class="journal-header">
       <div>
         <span class="t-eyebrow reveal">From the Journal</span>
         <h2 class="t-h2 reveal reveal-delay-1" style="margin-top:0.75rem;">Silk Road <em>stories</em></h2>
@@ -278,15 +261,11 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__grid">
-
-      <!-- Col 1: Brand narrative -->
       <div>
-        <p class="footer__brand-name">Abrexom<sup style="font-size:0.45em;vertical-align:super;letter-spacing:0;font-weight:300;">™</sup></p>
+        <p class="footer__brand-name">Abrexom™</p>
         <p class="footer__brand-tag">Treasures of the Silk Road, reborn.</p>
-        <p class="t-small" style="color:rgba(231,225,214,0.55);max-width:240px;line-height:1.9;">Premium Afghan Saffron, hand-harvested from the Herat Valley.</p>
+        <p class="footer__brand-sub">Premium Afghan Saffron, hand-harvested from the Herat Valley.</p>
       </div>
-
-      <!-- Col 2: Navigate -->
       <div>
         <p class="footer__col-title">Navigate</p>
         <ul class="footer__col-links">
@@ -296,8 +275,6 @@
           <li><a href="/pages/contact.html">Contact</a></li>
         </ul>
       </div>
-
-      <!-- Col 3: Shop -->
       <div>
         <p class="footer__col-title">Shop</p>
         <ul class="footer__col-links">
@@ -305,8 +282,6 @@
           <li><a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer">Etsy</a></li>
         </ul>
       </div>
-
-      <!-- Col 4: Connect -->
       <div>
         <p class="footer__col-title">Connect</p>
         <ul class="footer__col-links">
@@ -315,14 +290,10 @@
           <li><a href="mailto:hello@abrexom.com">hello@abrexom.com</a></li>
         </ul>
       </div>
-
     </div>
-
-    <!-- Bottom legal row — no social duplicates -->
     <div class="footer__bottom">
       <p class="footer__legal">&copy; <span class="footer-year"></span> Abrexom™. All rights reserved. ABREXOM is a trademark of Abrexom.</p>
     </div>
-
   </div>
 </footer>
 
