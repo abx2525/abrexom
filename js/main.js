@@ -63,7 +63,7 @@ function initReveal() {
   els.forEach(function(el) { obs.observe(el); });
 }
 
-/* Contact form */
+/* Contact form — Formspree */
 function initContact() {
   var form = document.getElementById('contactForm');
   if (!form) return;
@@ -72,11 +72,25 @@ function initContact() {
     var btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    /* Replace with: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(new FormData(form))) }) */
-    setTimeout(function() {
-      var s = document.getElementById('formSuccess');
-      if (s) { form.style.display = 'none'; s.style.display = 'block'; }
-    }, 800);
+
+    fetch('https://formspree.io/f/xjgnoadk', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+    .then(function(res) {
+      if (res.ok) {
+        var s = document.getElementById('formSuccess');
+        if (s) { form.style.display = 'none'; s.style.display = 'block'; }
+      } else {
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Network error — try again';
+      btn.disabled = false;
+    });
   });
 }
 
