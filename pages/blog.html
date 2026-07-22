@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Analytics 4 — must be first script in head -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-04LR4LL9JZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,25 +18,29 @@
   <meta property="og:description" content="The history of saffron, Silk Road stories, and recipes from the crossroads of East and West." />
   <meta property="og:image" content="https://www.abrexom.com/assets/images/og-image.jpg" />
   <link rel="icon" href="/assets/images/favicon.ico" />
-  <link rel="stylesheet" href="/css/global.css?v=8" />
-
+  <link rel="stylesheet" href="/css/global.css?v=9" />
   <style>
-    .blog-card { background: var(--white); border: 0.5px solid rgba(184,162,106,0.15); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s var(--ease); }
-    .blog-card:hover { border-color: rgba(184,162,106,0.45); transform: translateY(-4px); }
-    .blog-card__img { aspect-ratio:16/9; background:var(--ink); overflow:hidden; position:relative; }
-    .blog-card__img-inner { position:absolute;inset:0;display:flex;align-items:center;justify-content:center; }
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .blog-card { background:var(--white); border:0.5px solid rgba(184,162,106,0.15); display:flex; flex-direction:column; transition:border-color 0.3s, transform 0.3s; }
+    .blog-card:hover { border-color:rgba(184,162,106,0.45); transform:translateY(-4px); }
+    .blog-card__img { aspect-ratio:16/9; overflow:hidden; position:relative; background:var(--ink); }
+    .blog-card__img img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .blog-card__img-fallback { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
     .blog-card__body { padding:2rem; flex:1; display:flex; flex-direction:column; }
-    .blog-card__meta { display:flex; gap:1rem; margin-bottom:1rem; align-items:center; }
-    .blog-card__title { font-family:var(--ff-display); font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:300; line-height:1.25; color:var(--ink); margin-bottom:0.875rem; }
-    .blog-card__excerpt { font-size:0.875rem; color:var(--ink-soft); line-height:1.8; margin-bottom:1.5rem; flex:1; }
-    .blog-card__read { font-size:0.6875rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); transition:color 0.2s; }
+    .blog-card__meta { display:flex; gap:1rem; margin-bottom:1.25rem; align-items:center; }
+    .blog-card__title { font-family:var(--ff-serif); font-size:clamp(1.2rem,2vw,1.6rem); font-weight:300; line-height:1.25; color:var(--ink); margin-bottom:0.875rem; }
+    .blog-card__excerpt { font-size:0.9rem; color:var(--ink-soft); line-height:1.85; margin-bottom:1.5rem; flex:1; }
+    .blog-card__read { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); transition:color 0.2s; }
     .blog-card__read:hover { color:var(--ink); }
     .post-full { max-width:720px; margin:0 auto; padding:5rem 2rem; }
-    .post-full__header { margin-bottom:3rem; }
     .post-full__body p { font-size:1rem; color:var(--ink-soft); line-height:1.9; margin-bottom:1.5rem; }
-    .post-full__body h3 { font-family:var(--ff-display); font-size:1.6rem; font-weight:300; color:var(--ink); margin:2.5rem 0 1rem; }
+    .post-full__body h3 { font-family:var(--ff-serif); font-size:1.7rem; font-weight:300; color:var(--ink); margin:2.5rem 0 1rem; }
     .post-full__body em { font-style:italic; }
     .post-full__body strong { color:var(--ink); font-weight:400; }
+    .post-divider { height:0.5px; background:rgba(184,162,106,0.15); max-width:720px; margin:0 auto; }
+    @media (max-width:768px) {
+      .blog-grid { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
@@ -75,7 +79,7 @@
     <p class="t-eyebrow" style="color:var(--gold-light);margin-bottom:1.5rem;opacity:0;animation:fadeUp 0.8s 0.1s forwards;">The Journal</p>
     <h1 class="t-h1" style="color:var(--stone);opacity:0;animation:fadeUp 0.8s 0.3s forwards;">Silk Road <em style="color:var(--gold-light);">stories</em></h1>
     <div class="divider" style="opacity:0;animation:fadeIn 1s 0.6s forwards;"></div>
-    <p style="font-family:var(--ff-display);font-style:italic;font-size:1.05rem;color:rgba(231,225,214,0.55);margin-top:1.5rem;opacity:0;animation:fadeUp 0.8s 0.8s forwards;">
+    <p style="font-family:var(--ff-serif);font-style:italic;font-size:1.05rem;color:rgba(231,225,214,0.55);margin-top:1.5rem;opacity:0;animation:fadeUp 0.8s 0.8s forwards;">
       History, provenance, and the art of using the world's finest spices.
     </p>
   </div>
@@ -85,25 +89,43 @@
 <div style="background:var(--stone-d);padding:2rem 0;border-bottom:0.5px solid rgba(184,162,106,0.15);">
   <div class="container" style="display:flex;align-items:center;gap:1rem;">
     <label for="blogSearch" class="t-caption" style="white-space:nowrap;">Search posts</label>
-    <input id="blogSearch" type="search" placeholder="saffron, history, recipes…" style="flex:1;max-width:360px;padding:0.6rem 1rem;background:transparent;border:0.5px solid rgba(8,5,14,0.2);font-family:var(--ff-body);font-size:0.85rem;color:var(--ink);outline:none;" />
+    <input id="blogSearch" type="search" placeholder="saffron, history, recipes…"
+      style="flex:1;max-width:360px;padding:0.65rem 1rem;background:transparent;border:0.5px solid rgba(8,5,14,0.2);font-family:var(--ff-sans);font-size:0.9rem;color:var(--ink);outline:none;" />
   </div>
 </div>
 
-<!-- ══ BLOG GRID ══════════════════════════════════════════════ -->
+<!-- ══ BLOG CARD GRID ════════════════════════════════════════ -->
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;">
+    <div class="blog-grid">
 
-      <!-- Post 1 -->
+      <!-- ─────────────────────────────────────────────────────
+           CARD 1 — SAFFRON / HERAT VALLEY
+           Image file : assets/images/blog-saffron-field.jpg
+           Dimensions : 800 × 450 px  (16:9 ratio)
+           Subject    : Saffron field, crocus flowers in bloom,
+                        or close-up of red saffron threads.
+                        Landscape orientation. Warm tones.
+      ───────────────────────────────────────────────────────── -->
       <article class="blog-card reveal" id="post-1">
         <div class="blog-card__img">
-          <div class="blog-card__img-inner" style="background:radial-gradient(ellipse at 40% 50%,rgba(139,26,26,0.5),rgba(8,5,14,0.9));">
-            <span style="font-family:var(--ff-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.6;">✦</span>
+          <img
+            src="/assets/images/blog-saffron-field.jpg"
+            alt="Saffron crocus flowers blooming in the Herat Valley, Afghanistan"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback shown only while image is missing -->
+          <div class="blog-card__img-fallback"
+               style="background:radial-gradient(ellipse at 40% 50%,rgba(139,26,26,0.55),rgba(8,5,14,0.92));">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"
+                    stroke="#B8A26A" stroke-width="0.8" fill="none" opacity="0.7"/>
+            </svg>
           </div>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="badge">Saffron</span>
-            
+          <div class="blog-card__meta">
+            <span class="badge">Saffron</span>
           </div>
           <h2 class="blog-card__title">Why Herat Valley produces the world's finest saffron</h2>
           <p class="blog-card__excerpt">At 900 metres above sea level, with long dry summers and cold winters, the Herat Valley creates conditions that no commercial farm can replicate. We explore the geography, climate, and centuries of cultivation that make Afghan saffron exceptional.</p>
@@ -111,16 +133,34 @@
         </div>
       </article>
 
-      <!-- Post 2 -->
+      <!-- ─────────────────────────────────────────────────────
+           CARD 2 — HISTORY / SILK ROAD
+           Image file : assets/images/blog-silk-road.jpg
+           Dimensions : 800 × 450 px  (16:9 ratio)
+           Subject    : Ancient map, desert caravan route,
+                        or landscape evoking Central Asia /
+                        historical Silk Road trade.
+                        Earthy, muted tones preferred.
+      ───────────────────────────────────────────────────────── -->
       <article class="blog-card reveal reveal-delay-2" id="post-2">
         <div class="blog-card__img">
-          <div class="blog-card__img-inner" style="background:radial-gradient(ellipse at 60% 40%,rgba(184,162,106,0.3),rgba(8,5,14,0.9));">
-            <span style="font-family:var(--ff-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.6;">✦</span>
+          <img
+            src="/assets/images/blog-silk-road.jpg"
+            alt="Ancient Silk Road trade route through Central Asia"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback shown only while image is missing -->
+          <div class="blog-card__img-fallback"
+               style="background:radial-gradient(ellipse at 60% 40%,rgba(184,162,106,0.3),rgba(8,5,14,0.92));">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"
+                    stroke="#B8A26A" stroke-width="0.8" fill="none" opacity="0.7"/>
+            </svg>
           </div>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="badge">History</span>
-            
+          <div class="blog-card__meta">
+            <span class="badge">History</span>
           </div>
           <h2 class="blog-card__title">The ancient routes that carried saffron to the world</h2>
           <p class="blog-card__excerpt">For three millennia, saffron traveled the Silk Road from Herat to Rome, from Persia to China. We trace its journey — how a delicate flower became one of the most traded commodities in human history.</p>
@@ -128,19 +168,37 @@
         </div>
       </article>
 
-      <!-- Post 3 -->
+      <!-- ─────────────────────────────────────────────────────
+           CARD 3 — COOKING / TECHNIQUES
+           Image file : assets/images/blog-cooking.jpg
+           Dimensions : 800 × 450 px  (16:9 ratio)
+           Subject    : Saffron threads blooming in warm water,
+                        a small ceramic bowl with golden liquid,
+                        or a finished saffron dish (risotto,
+                        paella, or Persian rice). Warm tones.
+      ───────────────────────────────────────────────────────── -->
       <article class="blog-card reveal reveal-delay-3" id="post-3">
         <div class="blog-card__img">
-          <div class="blog-card__img-inner" style="background:radial-gradient(ellipse at 50% 60%,rgba(139,26,26,0.4),rgba(8,5,14,0.95));">
-            <span style="font-family:var(--ff-display);font-size:3rem;font-weight:300;color:var(--gold);opacity:0.6;">✦</span>
+          <img
+            src="/assets/images/blog-cooking.jpg"
+            alt="Saffron threads blooming in warm water — how to use saffron correctly"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback shown only while image is missing -->
+          <div class="blog-card__img-fallback"
+               style="background:radial-gradient(ellipse at 50% 60%,rgba(139,26,26,0.45),rgba(8,5,14,0.92));">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2L13.5 8.5L20 7L15.5 12L20 17L13.5 15.5L12 22L10.5 15.5L4 17L8.5 12L4 7L10.5 8.5Z"
+                    stroke="#B8A26A" stroke-width="0.8" fill="none" opacity="0.7"/>
+            </svg>
           </div>
         </div>
         <div class="blog-card__body">
-          <div class="blog-card__meta"><span class="badge">Cooking</span>
-            
+          <div class="blog-card__meta">
+            <span class="badge">Cooking</span>
           </div>
           <h2 class="blog-card__title">How to use saffron: five techniques every cook should know</h2>
-          <p class="blog-card__excerpt">Blooming, steeping, grinding — the right technique unlocks saffron's full colour, fragrance, and flavour. Most people use saffron incorrectly. Here's how to get it right.</p>
+          <p class="blog-card__excerpt">Blooming, steeping, grinding — the right technique unlocks saffron's full colour, fragrance, and flavour. Most people use saffron incorrectly and wonder why results disappoint. Here's how to get it right.</p>
           <a href="#full-post-3" class="blog-card__read">Read more →</a>
         </div>
       </article>
@@ -149,14 +207,35 @@
   </div>
 </section>
 
-<!-- ══ FULL POSTS ═════════════════════════════════════════════ -->
+<!-- ══ FULL POSTS ════════════════════════════════════════════ -->
 <div style="background:var(--stone-d);">
 
-  <!-- Full Post 1 -->
+  <!-- ── FULL POST 1 ─────────────────────────────────────── -->
   <div class="post-full" id="full-post-1">
-    <div class="post-full__header">
-      <div class="blog-card__meta" style="margin-bottom:1.5rem;"><span class="badge">Saffron</span></div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">Why Herat Valley produces<br>the world's finest saffron</h2>
+    <div style="margin-bottom:3rem;">
+      <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:center;">
+        <span class="badge">Saffron</span>
+      </div>
+      <!-- ───────────────────────────────────────────────────
+           POST 1 HERO IMAGE
+           Image file : assets/images/blog-saffron-field.jpg
+           Dimensions : 1200 × 600 px  (2:1 ratio)
+           Subject    : Wide landscape of saffron fields in
+                        bloom, or detailed harvest scene —
+                        farmers picking crocus flowers at dawn
+                        in Herat Valley. Warm natural light.
+      ─────────────────────────────────────────────────────── -->
+      <div style="aspect-ratio:2/1;overflow:hidden;margin-bottom:2.5rem;background:var(--ink);">
+        <img
+          src="/assets/images/blog-saffron-field.jpg"
+          alt="Saffron crocus harvest at dawn in Herat Valley, Afghanistan"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
+          onerror="this.parentElement.style.display='none';"
+        />
+      </div>
+      <h2 style="font-family:var(--ff-serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">
+        Why Herat Valley produces<br>the world's finest saffron
+      </h2>
       <div class="divider divider--left" style="margin-top:2rem;"></div>
     </div>
     <div class="post-full__body">
@@ -168,18 +247,40 @@
       <p>Saffron crocus (<em>Crocus sativus</em>) blooms for just two to three weeks each October. The flowers open at dawn and must be picked within hours, before the heat of the day wilts the delicate petals. Each flower contains exactly three stigmas — the red threads we prize — and they must be separated by hand. There is no mechanisation that does this without destroying what you're trying to collect.</p>
       <p>In the Herat Valley, families rise before sunrise during harvest season and work through the morning in the fields. A skilled picker might harvest 150 to 200 grams of dried saffron in an entire season. This is why saffron is expensive: it is simply one of the most labour-intensive crops in the world.</p>
       <h3>The Abrexom difference</h3>
-      <p>Most saffron sold globally is blended — stigmas from different regions and different quality grades mixed together to hit a price point. We do not do this. Every Abrexom jar contains saffron from the Herat Valley, sourced directly from local farming families. Afghanistan's saffron sector is not industrialised. There are no large processing facilities or certification bodies — just farmers who have grown this flower for centuries, and who do it better than anyone else in the world.</p>
+      <p>Most saffron sold globally is blended — stigmas from different regions and different quality grades mixed together to hit a price point. We do not do this. Every Abrexom jar contains saffron from the Herat Valley, sourced directly from local farming families. Afghanistan's saffron sector is not industrialised — just farmers who have grown this flower for centuries, and who do it better than anyone else in the world.</p>
     </div>
     <a href="#post-1" class="btn btn--outline" style="margin-top:2rem;">Back to top ↑</a>
   </div>
 
-  <div style="height:0.5px;background:rgba(184,162,106,0.15);max-width:720px;margin:0 auto;"></div>
+  <div class="post-divider"></div>
 
-  <!-- Full Post 2 -->
+  <!-- ── FULL POST 2 ─────────────────────────────────────── -->
   <div class="post-full" id="full-post-2">
-    <div class="post-full__header">
-      <div class="blog-card__meta" style="margin-bottom:1.5rem;"><span class="badge">History</span></div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">The ancient routes that carried<br>saffron to the world</h2>
+    <div style="margin-bottom:3rem;">
+      <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:center;">
+        <span class="badge">History</span>
+      </div>
+      <!-- ───────────────────────────────────────────────────
+           POST 2 HERO IMAGE
+           Image file : assets/images/blog-silk-road.jpg
+           Dimensions : 1200 × 600 px  (2:1 ratio)
+           Subject    : Ancient Silk Road map illustration,
+                        a desert caravan at dusk, or a wide
+                        landscape of Central Asian terrain
+                        (steppes, mountains, or old city).
+                        Muted, historical atmosphere.
+      ─────────────────────────────────────────────────────── -->
+      <div style="aspect-ratio:2/1;overflow:hidden;margin-bottom:2.5rem;background:var(--ink);">
+        <img
+          src="/assets/images/blog-silk-road.jpg"
+          alt="Ancient Silk Road caravan route through Central Asia"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
+          onerror="this.parentElement.style.display='none';"
+        />
+      </div>
+      <h2 style="font-family:var(--ff-serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">
+        The ancient routes that carried<br>saffron to the world
+      </h2>
       <div class="divider divider--left" style="margin-top:2rem;"></div>
     </div>
     <div class="post-full__body">
@@ -189,20 +290,43 @@
       <p>Saffron was a natural export. The climate of the Herat Valley was (and remains) ideal for <em>Crocus sativus</em>. By the first millennium BCE, Afghan saffron was well established as a luxury item traded across the known world. Persian kings used it to dye their robes. Greek physicians prescribed it for melancholy and digestive ailments. Roman emperors scattered it in their bathwater and on the streets during processions.</p>
       <h3>What the merchants carried</h3>
       <p>The popular image of the Silk Road is dominated by silk — Chinese silk heading west in exchange for gold, glass, and horses. But silk was never the only commodity. Merchants carried pepper, cinnamon, and cardamom from India; lapis lazuli from the mines of Badakhshan; paper and printing techniques from China; glasswork from Rome and Alexandria; and from Afghanistan's highlands, saffron.</p>
-      <p>The Silk Road was not simply a trade route. It was the mechanism by which human knowledge, art, religion, and culture spread across Eurasia. Buddhism traveled the Silk Road from India to China. Islam spread along it from Arabia to Southeast Asia. The bubonic plague, too, followed its routes. Every commodity carried cultural meaning alongside its material value.</p>
+      <p>The Silk Road was not simply a trade route. It was the mechanism by which human knowledge, art, religion, and culture spread across Eurasia. Buddhism traveled the Silk Road from India to China. Islam spread along it from Arabia to Southeast Asia. Every commodity carried cultural meaning alongside its material value.</p>
       <h3>The name we chose</h3>
       <p>The Persian word for the Silk Road is <em>raah abreshom</em> — literally, the silk road. <em>Abreshom</em> means silk. When we founded Abrexom, we took that word and made it new: not a preservation of the past, but a revival of its spirit — the idea that rare and precious things deserve to travel, to be found, and to be honoured at the table they arrive at.</p>
     </div>
     <a href="#post-2" class="btn btn--outline" style="margin-top:2rem;">Back to top ↑</a>
   </div>
 
-  <div style="height:0.5px;background:rgba(184,162,106,0.15);max-width:720px;margin:0 auto;"></div>
+  <div class="post-divider"></div>
 
-  <!-- Full Post 3 -->
+  <!-- ── FULL POST 3 ─────────────────────────────────────── -->
   <div class="post-full" id="full-post-3">
-    <div class="post-full__header">
-      <div class="blog-card__meta" style="margin-bottom:1.5rem;"><span class="badge">Cooking</span></div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">How to use saffron:<br>five techniques every cook should know</h2>
+    <div style="margin-bottom:3rem;">
+      <div style="display:flex;gap:1rem;margin-bottom:1.5rem;align-items:center;">
+        <span class="badge">Cooking</span>
+      </div>
+      <!-- ───────────────────────────────────────────────────
+           POST 3 HERO IMAGE
+           Image file : assets/images/blog-cooking.jpg
+           Dimensions : 1200 × 600 px  (2:1 ratio)
+           Subject    : Close-up of saffron threads steeping
+                        in warm golden liquid in a small bowl
+                        or ramekin, or a finished dish — a
+                        saffron risotto, paella, or Persian
+                        rice with a vivid golden colour.
+                        Clean, editorial food photography.
+      ─────────────────────────────────────────────────────── -->
+      <div style="aspect-ratio:2/1;overflow:hidden;margin-bottom:2.5rem;background:var(--ink);">
+        <img
+          src="/assets/images/blog-cooking.jpg"
+          alt="Saffron threads steeping in warm liquid — the blooming technique"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
+          onerror="this.parentElement.style.display='none';"
+        />
+      </div>
+      <h2 style="font-family:var(--ff-serif);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;color:var(--ink);">
+        How to use saffron:<br>five techniques every cook should know
+      </h2>
       <div class="divider divider--left" style="margin-top:2rem;"></div>
     </div>
     <div class="post-full__body">
@@ -210,13 +334,13 @@
       <h3>1. Blooming in warm liquid</h3>
       <p>The most reliable technique: crush a pinch of saffron threads between your fingers, then steep them in 3–4 tablespoons of warm (not boiling) water, stock, or milk for at least 15 minutes. The liquid turns a deep orange-gold. Add this liquid — threads and all — to your dish. The warm liquid draws out colour and aroma without the heat destroying the delicate compounds responsible for both.</p>
       <h3>2. Dry toasting before steeping</h3>
-      <p>For a more intense, slightly smoky flavour, briefly toast the threads in a dry pan over very low heat for 20-30 seconds before steeping. The threads become brittle and crumble more easily, releasing their compounds faster. This technique is traditional in Persian rice dishes.</p>
+      <p>For a more intense, slightly smoky flavour, briefly toast the threads in a dry pan over very low heat for 20–30 seconds before steeping. The threads become brittle and crumble more easily, releasing their compounds faster. This technique is traditional in Persian rice dishes.</p>
       <h3>3. Grinding to a powder</h3>
       <p>Toasted threads can be ground to a fine powder using a mortar and pestle. A small pinch of powder dissolved in liquid dissolves faster and colours more evenly than threads. Useful for pastry, ice cream, and other preparations where texture matters.</p>
       <h3>4. Cold steeping overnight</h3>
       <p>For cold preparations — cocktails, cold soups, ice cream bases — steep threads in cold liquid overnight. Cold steeping extracts a slightly different flavour profile: brighter, more floral, less earthy than warm steeping.</p>
       <h3>5. How much to use</h3>
-      <p>A little goes a long way. For a risotto serving four, 0.3-0.4g (a generous pinch of about 30-40 threads) is sufficient. For a larger paella serving eight, use 0.5-0.8g. More is not better — an excess of saffron turns a dish medicinal and bitter. Abrexom saffron is high-grade, so start at the lower end of any recipe's recommendation.</p>
+      <p>A little goes a long way. For a risotto serving four, 0.3–0.4 g (a generous pinch of about 30–40 threads) is sufficient. For a larger paella serving eight, use 0.5–0.8 g. More is not better — an excess of saffron turns a dish medicinal and bitter. Abrexom saffron is high-grade, so start at the lower end of any recipe's recommendation.</p>
     </div>
     <a href="#post-3" class="btn btn--outline" style="margin-top:2rem;">Back to top ↑</a>
   </div>
@@ -258,7 +382,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__legal">&copy; <span class="footer-year"></span> Abrexom™. All rights reserved.</p>
+      <p class="footer__legal">&copy; <span class="footer-year"></span> Abrexom™. All rights reserved. ABREXOM is a trademark of Abrexom.</p>
     </div>
   </div>
 </footer>
