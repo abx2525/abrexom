@@ -15,11 +15,10 @@
   <meta name="description" content="Get in touch with Abrexom. Questions about our saffron, wholesale enquiries, or just want to say hello — we'd love to hear from you." />
   <link rel="canonical" href="https://www.abrexom.com/pages/contact.html" />
   <meta property="og:title" content="Contact Abrexom™" />
-  <meta property="og:site_name" content="Abrexom" />
   <meta property="og:description" content="Questions, wholesale enquiries, or just want to say hello — get in touch." />
   <meta property="og:image" content="https://www.abrexom.com/assets/images/og-image.jpg" />
   <link rel="icon" href="/assets/images/favicon.ico" />
-  <link rel="stylesheet" href="/css/global.css?v=10" />
+  <link rel="stylesheet" href="/css/global.css?v=11" />
   <style>
     /* Platform links — inlined to prevent cache issues */
     .platform-links { display: flex; flex-direction: column; gap: 0.65rem; }
@@ -47,6 +46,14 @@
 
 </head>
 <body>
+<!-- ══ ANNOUNCEMENT BANNER ══════════════════════════════════ -->
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <span class="announcement-bar__dot" aria-hidden="true"></span>
+    <p>We're almost ready &nbsp;·&nbsp; Abrexom launches soon on Amazon &amp; Etsy &nbsp;·&nbsp; <a href="/pages/contact.html">Get in touch</a> for wholesale enquiries</p>
+    <span class="announcement-bar__dot" aria-hidden="true"></span>
+  </div>
+</div>
 
 <!-- ══ NAV ══════════════════════════════════════════════════ -->
 <nav class="nav" id="nav">
@@ -57,7 +64,7 @@
     <li><a href="/pages/blog.html">Journal</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
   </ul>
-  <a href="/index.html#shop" class="nav__shop">Shop Now</a>
+  <a href="/index.html#shop" class="nav__shop nav__shop--disabled" aria-disabled="true">Coming Soon</a>
   <button class="nav__toggle" id="navToggle" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -269,8 +276,8 @@
       <div>
         <p class="footer__col-title">Shop</p>
         <ul class="footer__col-links">
-          <li><a href="https://www.amazon.com/s?k=abrexom+saffron" target="_blank" rel="noopener noreferrer">Amazon</a></li>
-          <li><a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer">Etsy</a></li>
+          <li><span class="footer-link-disabled">Amazon <span class="footer-soon-tag">Soon</span></span></li>
+          <li><span class="footer-link-disabled">Etsy <span class="footer-soon-tag">Soon</span></span></li>
         </ul>
       </div>
       <div>
