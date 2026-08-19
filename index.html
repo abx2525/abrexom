@@ -16,20 +16,28 @@
   <meta name="keywords" content="Afghan saffron, Herat Valley saffron, premium saffron, Silk Road spices, buy saffron online" />
   <link rel="canonical" href="https://www.abrexom.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Abrexom" />
   <meta property="og:url" content="https://www.abrexom.com/" />
   <meta property="og:title" content="Abrexom™ — Treasures of the Silk Road, Reborn" />
   <meta property="og:description" content="Premium Afghan Saffron, hand-harvested from the Herat Valley. Ethically sourced. Exceptionally pure." />
-  <meta property="og:image" content="https://abrexom.com/assets/images/og-image.jpg" />
+  <meta property="og:image" content="https://www.abrexom.com/assets/images/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"Abrexom","url":"https://www.abrexom.com","description":"Abrexom revives treasures once carried along the ancient Silk Road. Premium Afghan saffron, hand-harvested from the Herat Valley.","sameAs":["https://www.instagram.com/shopabrexom","https://www.tiktok.com/@shopabrexom","https://www.amazon.com/abrexom","https://www.etsy.com/shop/abrexom"]}
   </script>
   <link rel="icon" href="/assets/images/favicon.ico" />
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/css/global.css?v=8" />
+  <link rel="stylesheet" href="/css/global.css?v=11" />
 </head>
 <body>
+
+<!-- ══ ANNOUNCEMENT BANNER ══════════════════════════════════ -->
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    <span class="announcement-bar__dot" aria-hidden="true"></span>
+    <p>We're almost ready &nbsp;·&nbsp; Abrexom launches soon on Amazon &amp; Etsy &nbsp;·&nbsp; <a href="/pages/contact.html">Get in touch</a> for wholesale enquiries</p>
+    <span class="announcement-bar__dot" aria-hidden="true"></span>
+  </div>
+</div>
 
 <!-- ══ NAV ══════════════════════════════════════════════════ -->
 <nav class="nav" id="nav">
@@ -40,7 +48,7 @@
     <li><a href="/pages/blog.html">Journal</a></li>
     <li><a href="/pages/contact.html">Contact</a></li>
   </ul>
-  <a href="#shop" class="nav__shop">Shop Now</a>
+  <a href="#shop" class="nav__shop nav__shop--disabled" aria-disabled="true">Coming Soon</a>
   <button class="nav__toggle" id="navToggle" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -52,7 +60,7 @@
   <a href="/pages/about.html">About</a>
   <a href="/pages/blog.html">Journal</a>
   <a href="/pages/contact.html">Contact</a>
-  <a href="#shop" style="color:var(--gold)">Shop Now</a>
+  <a href="#" style="color:var(--ink-soft);cursor:default;pointer-events:none;">Coming Soon</a>
 </div>
 
 <!-- ══ HERO ═════════════════════════════════════════════════ -->
@@ -134,7 +142,6 @@
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
         />
         <!-- Fallback shown only if image file is missing -->
-        <!--
         <div class="product-img-fallback">
           <svg width="80" height="80" viewBox="0 0 400 400" fill="none" aria-hidden="true">
             <circle cx="200" cy="200" r="180" stroke="#B8A26A" stroke-width="1" opacity="0.4"/>
@@ -145,7 +152,6 @@
           </svg>
           <p style="font-family:var(--ff-serif);font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--stone);opacity:0.5;margin-top:1.5rem;">Abrexom</p>
         </div>
-        -->
         <!-- Origin tag -->
         <div class="product-tag">
           <p class="t-caption" style="color:var(--gold);margin-bottom:0.3rem;">Origin</p>
@@ -169,18 +175,9 @@
         </ul>
 
         <!-- Shop buttons -->
-        <p class="t-caption" style="margin-bottom:1.25rem;">Available on</p>
-        <div class="shop-btns">
-          <a href="https://www.amazon.com/s?k=abrexom+saffron" target="_blank" rel="noopener noreferrer" class="shop-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg>
-            <span>Amazon</span>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
-          <a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer" class="shop-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-            <span>Etsy</span>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
-          </a>
+        <div class="coming-soon-banner">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Launching soon — available on Amazon &amp; Etsy</span>
         </div>
       </div>
     </div>
@@ -281,8 +278,8 @@
       <div>
         <p class="footer__col-title">Shop</p>
         <ul class="footer__col-links">
-          <li><a href="https://www.amazon.com/s?k=abrexom+saffron" target="_blank" rel="noopener noreferrer">Amazon</a></li>
-          <li><a href="https://www.etsy.com/shop/abrexom" target="_blank" rel="noopener noreferrer">Etsy</a></li>
+          <li><span class="footer-link-disabled">Amazon <span class="footer-soon-tag">Soon</span></span></li>
+          <li><span class="footer-link-disabled">Etsy <span class="footer-soon-tag">Soon</span></span></li>
         </ul>
       </div>
       <div>
@@ -295,7 +292,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__legal">&copy; <span class="footer-year"></span> Abrexom™. All rights reserved.</p>
+      <p class="footer__legal">&copy; <span class="footer-year"></span> Abrexom™. All rights reserved. ABREXOM is a trademark of Abrexom.</p>
     </div>
   </div>
 </footer>
